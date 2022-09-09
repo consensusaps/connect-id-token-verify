@@ -29,12 +29,15 @@ app.get('/', async (req, res) => {
 
     let user = {}
     try {
-        const verified = jwt.verify(idToken, signingKey);
+        const verified = jwt.verify(idToken, signingKey, {
+            issuer: 'https://api.dev.consensus-connect.com',
+            algorithms: ['RS256', 'RS512']
+        });
         if (!!verified) {
             validationStatus = 'VALID';
             user = verified;
         }
-    } catch(_) {
+    } catch (_) {
         validationStatus = 'INVALID';
     }
 
