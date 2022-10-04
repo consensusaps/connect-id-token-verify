@@ -10,6 +10,7 @@ app.get('/', async (req, res) => {
 
     if (!idToken || idToken == '') {
         res.send('No token provided via <code>?token=x</code> query paramter.');
+        return;
     }
 
     let validationStatus = 'N/A';
