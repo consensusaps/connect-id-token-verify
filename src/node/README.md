@@ -1,6 +1,6 @@
 # Node Express
 
-This is a Node.JS Express version that will receive and parse a JWT token from a querry parameter.
+This is a Node.JS Express project that will receive and parse a JWT token from a query parameter.
 
 To start the application:
 
