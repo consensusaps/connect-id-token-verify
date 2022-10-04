@@ -17,12 +17,11 @@ app.get('/', async (req, res) => {
 
     const decodedToken = jwt.decode(idToken, { complete: true });
     const { kid: tokenKid } = decodedToken.header;
-    const { Email: email, iss: issuerUrl } = decodedToken.payload;
+    const { iss: issuerUrl } = decodedToken.payload;
 
     const issuer = await Issuer.discover(issuerUrl);
     const jwksUri = issuer.jwks_uri;
 
-    console.log('Using JWKS Url', jwksUri);
     const client = jwks({ jwksUri });
 
     const key = await client.getSigningKey(tokenKid);
