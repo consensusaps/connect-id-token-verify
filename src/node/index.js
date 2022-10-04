@@ -53,3 +53,17 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}`));
+
+/*
+ * Not necessary for OIDC, but nice to have when accepting messages through the postMessage() API,
+ * if you want to avoid accepting messages from '*'.
+ */
+const postMessageOriginWhitelist = [
+    'https://www.consensus-connect.com',
+    'https://dev.consensus-connect.com',
+    'https://staging.consensus-connect.com',
+    'https://www.novo-connnect.com',
+    'https://uat.novo-connect.com',
+    'https://www.novo-connect.eu',
+    'https://uat.novo-connect.eu'
+];
