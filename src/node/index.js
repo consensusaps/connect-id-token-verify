@@ -30,7 +30,15 @@ app.get('/', async (req, res) => {
     let user = {}
     try {
         const verified = jwt.verify(idToken, signingKey, {
-            issuer: 'https://api.dev.consensus-connect.com',
+            issuer: [
+                'https://api.consensus-connect.com',
+                'https://api.dev.consensus-connect.com',
+                'https://api.staging.consensus-connect.com',
+                'https://api.novo-connnect.com',
+                'https://api.uat.novo-connect.com',
+                'https://api.novo-connect.eu',
+                'https://api.uat.novo-connect.eu'
+            ],
             algorithms: ['RS256', 'RS512']
         });
         if (!!verified) {
