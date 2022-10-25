@@ -16,7 +16,7 @@ The issuer **must** be validated to ensure that the token comes from a trusted C
     'https://api.consensus-connect.com',
     'https://api.dev.consensus-connect.com',
     'https://api.staging.consensus-connect.com',
-    'https://api.novo-connnect.com',
+    'https://api.novo-connect.com',
     'https://api.uat.novo-connect.com',
     'https://api.novo-connect.eu',
     'https://api.uat.novo-connect.eu'
@@ -33,7 +33,7 @@ These Consensus origins can be whitelisted:
     'https://www.consensus-connect.com',
     'https://dev.consensus-connect.com',
     'https://staging.consensus-connect.com',
-    'https://www.novo-connnect.com',
+    'https://www.novo-connect.com',
     'https://uat.novo-connect.com',
     'https://www.novo-connect.eu',
     'https://uat.novo-connect.eu'
